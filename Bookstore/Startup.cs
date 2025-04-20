@@ -74,7 +74,10 @@ namespace Bookstore
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+                
             });
+            BookstoreContext.CreateAdminUser(app.ApplicationServices).Wait();
+
         }
     }
 }
